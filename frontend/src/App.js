@@ -15,9 +15,9 @@ function App() {
           <Routes>
 
           {/* AuthorsApp */}
-            {/* <Route path='/' element={<Authors></Authors>}></Route>
+            <Route path='/' element={<Authors></Authors>}></Route>
             <Route path='/add-author' element={<AddAuthor></AddAuthor>}></Route>
-            <Route path='/edit-author/:id' element={<EditAuthor></EditAuthor>}></Route> */}
+            <Route path='/edit-author/:id' element={<EditAuthor></EditAuthor>}></Route>
 
           {/* PokemonAPIApp */}
             {/* <Route path='/' element={<PokemonAPIApp></PokemonAPIApp>}></Route> */}
