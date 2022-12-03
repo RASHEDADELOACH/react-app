@@ -23,9 +23,9 @@ function App() {
             {/* <Route path='/' element={<PokemonAPIApp></PokemonAPIApp>}></Route> */}
 
           {/* Product Manager */}
-          <Route path='/' element={<Home></Home>}></Route>
+          {/* <Route path='/' element={<Home></Home>}></Route>
           <Route path='/product-details/:id' element={<ProductDetails></ProductDetails>}></Route>
-          <Route path='/edit-details/:id' element={<UpdateProduct></UpdateProduct>}></Route>
+          <Route path='/edit-details/:id' element={<UpdateProduct></UpdateProduct>}></Route> */}
 
           </Routes>
           </div>
