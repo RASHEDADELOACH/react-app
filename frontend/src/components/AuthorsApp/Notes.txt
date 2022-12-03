@@ -1,0 +1,234 @@
+// STEP 1: Create App: npx create-react-app todo-frontend
+// This creates the actual "React App"
+
+// STEP 2: Create Directory for Backend: mkdir todo-backend
+
+// STEP 3: Initialize the Node Server: npm init -y
+// After, open Node Server in New Window: code .
+
+// STEP 4: Installed Express, CORS, and MongoDB: npm i express cors mongodb
+// Express - Backend Development based on NODE JS. We use this to write the API.
+// CORS: Middlewear
+// MondoDB - Database
+
+// STEP 5: Start Node Server: npm start
+
+// STEP 6: Run Index.JS File: node index.js 
+
+// STEP 7: Creates the API Server
+      // const express = require('express')
+      // const app = express()
+      // const port = 3005
+      // change port to a free port
+
+      // app.get('/', (req, res) => {
+      //   res.send('Hello World!')
+      // })
+
+      // app.listen(port, () => {
+      //   console.log(`Example app listening on port ${port}`)
+      // })
+
+// STEP 8: Install Middlewears
+      // app.use(express.json())
+      // app.use(cors())
+
+// STEP 9: Created MongoDB Database via MongoDB Atlas
+    // const { MongoClient, ServerApiVersion } = require('mongodb');
+    // const uri = "mongodb+srv://admin:<password>@cluster0.nfuqwhr.mongodb.net/?retryWrites=true&w=majority";
+    // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    // client.connect(err => {
+    //   const collection = client.db("test").collection("devices");
+    //   // perform actions on the collection object
+    //   client.close();
+    // });
+
+// STEP: 10 Imported MongoDB Template from Docs 
+    // import { MongoClient } from "mongodb";
+    // // Replace the uri string with your MongoDB deployment's connection string.
+    // async function run() {
+    //   try {
+    //     const database = client.db("sample_mflix");
+    //     const movies = database.collection("movies");
+    //   } finally {
+    //     await client.close();
+    //   }
+    // }
+    // run().catch(console.dir);
+
+// STEP 11: Consolidate Template with Credentials
+    // const { MongoClient, ServerApiVersion } = require('mongodb');
+    // const uri = "mongodb+srv://admin:58deF9u10lXbcaev@cluster0.nfuqwhr.mongodb.net/?retryWrites=true&w=majority";
+    // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    // async function run() {
+    //   try {
+    //     await client.connect()
+    //     const collection = client.db("AuthorsDB").collection("authors");
+    //   } finally {
+    //   }
+    // }
+    // run().catch(console.dir);
+
+// STEP 12: Create test.json and create fake properties to add to MongoDB's "Collection > Insert Document"
+    // [
+    //   {
+    //       "name": "Jack",
+    //       "age": 28,
+    //       "gender": "male"
+    //   },
+    //   {
+    //       "name": "Richard",
+    //       "age": 21,
+    //       "gender": "male"
+    //   },
+    //   {
+    //       "name": "Jamie",
+    //       "age": 26,
+    //       "gender": "female"
+    //   }
+    // ]
+
+// STEP 13: Created API Request to display results from MongoDB's Collection
+    // app.get('/authors', async(req, res)=>{
+    //   // Use "async" when something will take long to render so the coding can continue to load below this line.
+            
+    //           const query ={};
+    //           // Searches Parameters for spefic groups
+    //           const cursor = authorCollection.find(query);
+    //           // Cursor Finds data based on query
+    //           const result =  await cursor.toArray();
+    //           // displays what the cursor could find out of the query to display as an array.
+    //           res.send(result)
+    //           // displays results
+      
+    //       })
+
+// STEP 14: Started the "Thundercat Client" and connected the MondoDB Credentials
+
+// STEP 15: Create Component for "Authors.js" and css, then install Axios: npm i axios
+
+// STEP 16: After "npm start", Create state for "Authors Component", installed & imported "Axios" for fontend "npm i axios" and installed "get" request to pull data API Created
+    // useEffect(()=>{
+    //   axios.get('http://localhost:3005/authors').then(res => console.log(res))
+    // }, [])
+
+// STEP 17: Created a Table and Mapped each data section from the API into it's own row
+    // authors?.map(author => <tr>
+    //   {/* use Map to display each section from section into each table */}
+    //   <td>{author._id}</td>
+    //   <td>{author.name}</td>
+    //   <td>{author.age}</td>
+    //   <td>{author.gender}</td>
+    // </tr>)
+
+// STEP 18: Insert the UseEffect function to create the ability to post to the API via form
+    // useEffect(()=>{
+    //   // use to grab information from API
+    //  axios.get('http://localhost:3005/authors'). then(res => setAuthors(res.data))
+    //   // line creates promise: .get attemnpts to grab the request, .then is the next step if the .get is fulfilled
+    // }, [authors])
+    // // [authors] above is asked to constantly get the data, then it will be sent to the setAuthors which will trigger the page to display the information.
+    // console.log(authors)
+    // const handleAddAuthor = async(e) =>{
+    //   // Async - allows you to wait for information/response from server before submitting information
+    //   e.preventDefault()
+    //   // Stops page from loading on submit
+    //   const name = e.target.name.value
+    //   const age = e.target.age.value
+    //   const gender = e.target.gender.value
+    //   // Below takes the target values above and matches the key value pairs
+    //   const data = {
+    //       name: name,
+    //       age: age,
+    //       gender: gender
+    //   }
+    //   await axios.post('http://localhost:3005/authors', data).then(res => console.log(res))
+    //   // Post the object data above to the matching values within the api.
+    // }
+
+// STEP 19: Make delete button:
+    // <td><button onClick ={()=>{handleDelete(author._id)}}>Delete</button></td>
+
+// STEP 20: Create Arrow Function for handleDelete
+    // const handleDelete = async(id) =>{
+    //   await axios.delete(`http://localhost:3005/authors/${id}`).then(res => console.log(res))
+    // //    Added the Async and used axios to send request. Also, the ${} allows us to insert id that was grabbed from the delete button when clicked.
+    // }
+
+// STEP 21: Create the Edit API
+    // app.put('/authors/:id', async(req, res)=>{
+    //   const id = req.params.id;
+    //   // Finds Specific Parameter, in the case the "id"
+    //   const data = req.body;
+    //   // Sending the updated data to the body of the DB
+    //   const filter = {_id: Object(id)}
+    //   // Filer, looks for the specific id within the DB
+    //   const options = {upsert: true} // if the id is found/true within the DB, update+insert
+    //   const updatedData = {$set: data} // setting the updated data within the DB
+    //   const result = await authorCollection.updateOne(filter, options, updatedData) //this tells us to update the speific parameters
+    //   res.send(res) //displays results
+    //  })
+
+// STEP 22: Add Edit Button on front end
+    // Insert Button into table
+        //<td><button onClick={()=>{handleEdit(author._id)}}>Edit</button></td>
+    // Create the Edit function to link to the backend
+        //   const handleEdit = async(id) =>{
+        //     await axios.edit(`http://localhost:3005/authors/${id}`).then(res => console.log(res))
+        //  //    Added the Async and used axios to send request. Also, the ${} allows us to insert id that was grabbed from the delete button when clicked.
+        //  }
+
+// STEP: 23: Install React Router Version 6: npm i react-router-dom@6
+    // npm start
+    // Import router into "Index.js" front-end : import {BrowserRouter} from 'react-router-dom'
+    // Put App inside of the Browser Router
+          // <BrowserRouter>  
+          // <App />
+          // </BrowserRouter>
+    // Imported Routes on App.js: import { Route, Routes } from 'react-router-dom';
+    // Create Routes for the apps
+          // <Routes>
+          // <Route path='/' element={<Authors></Authors>}></Route>
+          // <Route path='/add-author' element={<AddAuthor></AddAuthor>}></Route>
+          // <Route path='/edit-author/:id' element={<EditAuthor></EditAuthor>}></Route>
+          // </Routes>
+    // Added Buton on home page to Route to the Add Author App/Page
+          // <div><Link to='/add-author'>Add Author</Link></div>
+
+// STEP 24: Create Add Author and Edit Author using the original code from the Authors.js file
+    // Create the Edd Author Function
+          //   const handleEdit = async(e) =>{
+          //     e.preventDefault()
+          //     const name = e.target.name.value
+          //     const age = e.target.age.value
+          //     const gender = e.target.gender.value
+          //     const data = {
+          //         name: name,
+          //         age: age,
+          //         gender: gender
+          //     }
+          //     await axios.put('http://localhost:3005/authors', data).then(res => console.log(res))
+          // }
+    // Called Function useNavigate: const navigate = useNavigate()
+    // Linked Edit Button: <td><button onClick={()=>{navigate(`/edit-author/${author._id}`)}}>Edit</button></td>
+    // Created var called id that we useParamter to grab the information: 
+          // const {id} = useParams() //useParams grabs the parameter from the main App.js file
+          // Created Redirect button on submit:
+                  //   if(name.length < 3){
+                  //     alert("must be at more then 3 characters")
+                  // }
+                  // else {
+                  //     await axios.post('http://localhost:3005/authors', data).then(res => {
+                  //         if(res.status === 200){
+                  //             navigate('/')
+                  //         }
+                  //     })
+                  // }
+
+          // Update Use Effect for Sorting Alphabetically
+                  //   useEffect(()=>{
+                  //     // use to grab information from API
+                  //    axios.get('http://localhost:3005/authors'). then(res =>{ 
+                  //     const sortedData = res.data.sort((a,b)=> a.name.localeCompare(b.name)) //focus here to sort
+                  //    setAuthors(sortedData)
+                  // })
