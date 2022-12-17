@@ -232,3 +232,10 @@
                   //     const sortedData = res.data.sort((a,b)=> a.name.localeCompare(b.name)) //focus here to sort
                   //    setAuthors(sortedData)
                   // })
+
+                HOW TO UPDATE ON GITHUB
+                navigate to the "react-app" folder on the terminal.
+                run the folloeing 3 codes after saving the files 
+                    git add .
+                    git commit -m"authors uncommenbted"
+                    git push 

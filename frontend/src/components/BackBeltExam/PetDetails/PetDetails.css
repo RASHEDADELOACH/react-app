@@ -1,0 +1,8 @@
+.deatails-page-div{
+    width: 50%;
+    margin: 5% 25%;
+    text-align: start;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 30px;
+}
